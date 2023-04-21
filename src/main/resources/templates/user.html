@@ -21,13 +21,13 @@
         <th>Role</th>
     </tr>
     <tr >
-        <td th:text="${user.getId()}"></td>
-        <td th:text="${user.getUserlogin()}"></td>
+        <td th:text="${user.getId}"></td>
+        <td th:text="${user.getUserlogin}"></td>
         <td th:text="${user.getName}"></td>
-        <td th:text="${user.getSurname()}"></td>
-        <td th:text="${user.getAge()}"></td>
-        <td th:text="${user.getEmail()}"></td>
-        <td> <span th:each="role, iterStat  : ${user.getRoles()}" th:text="${iterStat.last}? ${role.getRole()} : ${role.getRole() + ', '}"></span></td>
+        <td th:text="${user.getSurname}"></td>
+        <td th:text="${user.getAge}"></td>
+        <td th:text="${user.getEmail}"></td>
+        <td> <span th:each="role, iterStat  : ${user.getRoles}" th:text="${iterStat.last}? ${role.getRole()} : ${role.getRole() + ', '}"></span></td>
     </tr>
 </table>
 </body>

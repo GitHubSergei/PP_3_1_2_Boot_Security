@@ -27,7 +27,6 @@ public class WebUserServiceImpl implements WebUserService {
     @Override
     public UserDetails loadUserByUsername(String webusername) throws UsernameNotFoundException {
         Optional<WebUser> webUser = webUserRepository.findByUserlogin(webusername);
-
         if (webUser.isEmpty()) {
             throw new UsernameNotFoundException("User not found!");
         }

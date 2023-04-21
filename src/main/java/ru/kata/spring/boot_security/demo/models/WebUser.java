@@ -36,11 +36,11 @@ public class WebUser implements UserDetails {
     @Column (name="isEnabled")
     private boolean isEnabled;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @Fetch(FetchMode.JOIN)
     @JoinTable(name = "webuser_role",
-    joinColumns = @JoinColumn(name="webuser_id"),
-    inverseJoinColumns = @JoinColumn(name = "role_id"))
+            joinColumns = @JoinColumn(name="webuser_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
     public WebUser() {
